@@ -9,7 +9,7 @@ class Bob
   private
 
   def silent?(comment)
-    comment.nil? || comment.rstrip.empty?
+    comment.nil? || comment.strip.empty?
   end
 
   def yelling?(comment)
