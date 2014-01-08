@@ -6,10 +6,7 @@ class Year
   end
 
   def leap?
-    is_leap = evenly_divisible_by?(4)
-    is_leap = false if evenly_divisible_by?(100) unless evenly_divisible_by?(400)
-
-    is_leap
+    evenly_divisible_by?(4) && (!evenly_divisible_by?(100) || evenly_divisible_by?(400))
   end
 
   private
