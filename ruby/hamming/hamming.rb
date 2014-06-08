@@ -3,13 +3,7 @@ class Hamming
     strand = strand.split(//)
     other_strand = other_strand.split(//)
 
-    shorter_strand = strand
-    longer_strand = other_strand
-
-    if strand.length > other_strand.length
-      shorter_strand = other_strand
-      longer_strand = strand
-    end
+    shorter_strand, longer_strand = [strand, other_strand].sort { |a,b| a.length <=> b.length }
 
     distance = 0
     shorter_strand.each_with_index do |base, index|
